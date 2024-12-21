@@ -37,11 +37,21 @@ These libraries are required to handle joystick inputs and simulate keypresses.
 #### Step 3: Update the Script with Your Device Name and Button ID
 
 - Change `device_name` to the name of your joystick device.
-- Change `btnid` to the ID of the button you want to use to trigger the COMM menu.
+- Change `btnid1`, `btnid2`, and `btnid3` to the IDs of the buttons you want to use to trigger specific actions.
 
 ```python
-device_name = "Your Joystick Name Here"   # Replace with your joystick name
-btnid = 12                                # Replace with your desired button ID
+# Put the button IDs here.
+btnid1 = 10
+btnid2 = 11
+btnid3 = 12
+
+# Put the keys to be pressed here.
+key1 = 'q'  # awacs
+key2 = 't'  # atc
+key3 = 'y'  # other agencies
+
+# Put the name of the joystick you want the script to read.
+device_name = 'WINWING Orion Throttle Base II + F15EX HANDLE L + F15EX HANDLE R'
 ```
 
 #### Step 4: Comment the Print Line
@@ -59,28 +69,64 @@ btnid = 12                                # Replace with your desired button ID
 
 ---
 
-## Example Code Snippets
+## Example Code Snippet
 
 Here’s an example of what your script might look like after configuring it:
 
 ```python
 import pygame
+import sys
 import pydirectinput
 
-# Initialize pygame
 pygame.init()
 
-# Device configuration
-device_name = "Your Joystick Name Here"  # Set this to the correct device name
-btnid = 12  # Set this to the button ID you want to use
+pygame.joystick.init()
 
-# Main loop
-while True:
-    for event in pygame.event.get():
-        if event.type == pygame.JOYBUTTONDOWN:
-            if event.button == btnid:
-                pydirectinput.press("COMM_MENU_KEY")  # Replace with the key you want to simulate
-                break
+# Put the button IDs here.
+btnid1 = 10
+btnid2 = 11
+btnid3 = 12
+
+# Put the keys to be pressed here.
+key1 = 'q'  # awacs
+key2 = 't'  # atc
+key3 = 'y'  # other agencies
+
+# Put the name of the joystick you want the script to read.
+device_name = 'WINWING Orion Throttle Base II + F15EX HANDLE L + F15EX HANDLE R'
+
+# Check for available joysticks
+joystick_count = pygame.joystick.get_count()
+if joystick_count == 0:
+    print("No joysticks detected.")
+    sys.exit()
+
+# Display connected joystick info
+print(f"{joystick_count} joystick(s) detected.")
+for i in range(joystick_count):
+    joystick = pygame.joystick.Joystick(i)
+    joystick.init()
+    print(f"Joystick {i + 1}: {joystick.get_name()}")
+
+try:
+    print(f"Ctrl + C to exit!")
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.JOYBUTTONDOWN:
+                joystick = pygame.joystick.Joystick(event.joy)
+                button_id = event.button
+                if joystick.get_name() == device_name:
+                    if button_id == btnid1:
+                        pydirectinput.press(key1)
+                    elif button_id == btnid2:
+                        pydirectinput.press(key2)
+                    elif button_id == btnid3:
+                        pydirectinput.press(key3)
+
+except KeyboardInterrupt:
+    print("\nExiting program...")
+    pygame.quit()
+    sys.exit()
 ```
 
 ---
