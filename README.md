@@ -140,4 +140,8 @@ except KeyboardInterrupt:
 
 ## License
 
-This script is free to use and modify under the **MIT License**.
+lol
+
+lmao even
+
+do whatever i dont care
