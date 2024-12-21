@@ -41,8 +41,9 @@ try:
                 button_id = event.button
                 # print(f"{joystick_name} - Button {button_id} pressed")
                 # Uncomment this ^ line if you want to check what button you're pressing, sometimes the manufacturer software button_id is different.
-                if joystick.get_name() == device_name and button_id == btnid1:
-                    pydirectinput.press(key1)
+                if joystick.get_name() == device_name:
+                    if button_id == btnid1:
+                        pydirectinput.press(key1)
 
 except KeyboardInterrupt:
     print("\nExiting program...")
