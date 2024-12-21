@@ -63,7 +63,7 @@ device_name = 'WINWING Orion Throttle Base II + F15EX HANDLE L + F15EX HANDLE R'
 - After identifying the correct device and button, comment out the line that prints the button ID to prevent the terminal from printing unnecessary information on every keypress.
 
 ```python
-# print("Button ID:", btnid)  # Comment this line after identifying button_id
+# print(f"{joystick_name} - Button {button_id} pressed")
 ```
 
 ### 3. Save and Run the Script
