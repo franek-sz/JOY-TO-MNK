@@ -33,16 +33,16 @@ for i in range(joystick_count):
     print(f"Joystick {i + 1}: {joystick.get_name()}")
 
 try:
+    print(f"Ctrl + C to exit!")
     while True:
         for event in pygame.event.get():
             if event.type == pygame.JOYBUTTONDOWN:
                 joystick = pygame.joystick.Joystick(event.joy)
                 button_id = event.button
-                joystick_name = joystick.get_name()
                 # print(f"{joystick_name} - Button {button_id} pressed")
-                if joystick_name == device_name and button_id == btnid1:
+                # Uncomment this ^ line if you want to check what button you're pressing, sometimes the manufacturer software button_id is different.
+                if joystick.get_name() == device_name and button_id == btnid1:
                     pydirectinput.press(key1)
-
 
 except KeyboardInterrupt:
     print("\nExiting program...")
