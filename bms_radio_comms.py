@@ -16,6 +16,7 @@ key1 = 'q' #awacs
 key2 = 't' #atc
 key3 = 'y' #other agencies
 
+# Put the name of the joystick you want the script to read.
 device_name = 'WINWING Orion Throttle Base II + F15EX HANDLE L + F15EX HANDLE R'
 
 # Check for available joysticks
