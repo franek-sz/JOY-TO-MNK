@@ -16,6 +16,12 @@ key1 = 'q' #awacs
 key2 = 't' #atc
 key3 = 'y' #other agencies
 
+# button_key_map = {
+#     13: 't',
+#     15: 'y',
+#     16: 'q',
+# }
+
 # Put the name of the joystick you want the script to read.
 device_name = 'WINWING Orion Throttle Base II + F15EX HANDLE L + F15EX HANDLE R'
 
@@ -31,6 +37,8 @@ for i in range(joystick_count):
     joystick = pygame.joystick.Joystick(i)
     joystick.init()
     print(f"Joystick {i + 1}: {joystick.get_name()}")
+    print(f"Joystick Instance Id: {joystick.get_guid()}")
+    print(f"Joystick GUID: {joystick.get_instance_id()}")
 
 try:
     print(f"Ctrl + C to exit!")
@@ -39,7 +47,7 @@ try:
             if event.type == pygame.JOYBUTTONDOWN:
                 joystick = pygame.joystick.Joystick(event.joy)
                 button_id = event.button
-                # print(f"{joystick_name} - Button {button_id} pressed")
+                # print(f"{joystick.get_name()} - Button {button_id} pressed")
                 # Uncomment this ^ line if you want to check what button you're pressing, sometimes the manufacturer software button_id is different.
                 if joystick.get_name() == device_name:
                     if button_id == btnid1:
