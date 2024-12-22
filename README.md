@@ -28,7 +28,7 @@ These libraries are required to handle joystick inputs and simulate keypresses.
 - Run the script and check the name of the device (joystick) you want to use, as well as the button ID.
 - You will need the **device name** and **button ID** to configure the script correctly.
 
-```python
+```
     2 joystick(s) detected.
     Joystick 1: WINWING Orion Throttle Base II + F15EX HANDLE L + F15EX HANDLE R
     Joystick Instance Id: 0300954b9840000064bd000000000000
