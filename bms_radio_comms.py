@@ -25,7 +25,7 @@ print(f"{joystick_count} joystick(s) detected.")
 for i in range(joystick_count):
     joystick = pygame.joystick.Joystick(i)
     joystick.init()
-    print(f"Joystick {i + 1}: {joystick.get_name()}")
+    print(f"Joystick {i + 1} Name: {joystick.get_name()}")
     print(f"Joystick Instance Id: {joystick.get_guid()}")
     print(f"Joystick GUID: {joystick.get_instance_id()}")
 

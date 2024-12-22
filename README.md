@@ -40,8 +40,6 @@ These libraries are required to handle joystick inputs and simulate keypresses.
     Joystick 0 connencted
 ```
 
-- The name in the case of the example is: `WINWING Orion Throttle Base II + F15EX HANDLE L + F15EX HANDLE R`
-
 #### Step 3: Update the Script with Your Device Name and Button ID
 
 - Change `device_name` to the name of your joystick device.
@@ -50,9 +48,9 @@ These libraries are required to handle joystick inputs and simulate keypresses.
 ```python
 # Map your buttons here:
 button_key_map = {
-    12: 't',
-    14: 'y',
-    15: 'q',
+    12: 't', #atc
+    14: 'y', #other agencies
+    15: 'q', #awacs
 }
 # Put the devince name here:
 device_name = 'WINWING Orion Throttle Base II + F15EX HANDLE L + F15EX HANDLE R'
