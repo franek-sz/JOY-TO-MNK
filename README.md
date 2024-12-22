@@ -1,6 +1,6 @@
 # ✈️ Falcon BMS Joystick Keybinding Script
 
-This script is designed to simulate keypresses for the COMM menu in **Falcon BMS** using a joystick button. Since Falcon BMS does not allow remapping certain default keybinds, this script offers a workaround by triggering keypresses via joystick inputs.
+This script is designed to simulate keypresses for the COMM menu in **Falcon BMS** using a joystick button. Since Falcon BMS does not allow remapping certain default keybinds, this script offers a workaround by triggering keypresses via joystick inputs. (its not fast but it does its job)
 
 ---
 
