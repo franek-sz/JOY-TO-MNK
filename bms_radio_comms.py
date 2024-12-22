@@ -17,11 +17,13 @@ device_name = 'WINWING Orion Throttle Base II + F15EX HANDLE L + F15EX HANDLE R'
 joysticks = {}
 
 joystick_count = pygame.joystick.get_count()
+
 if joystick_count == 0:
     print("No joysticks detected.")
     sys.exit()
 
 print(f"{joystick_count} joystick(s) detected.")
+
 for i in range(joystick_count):
     joystick = pygame.joystick.Joystick(i)
     joystick.init()
