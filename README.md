@@ -43,7 +43,7 @@ These libraries are required to handle joystick inputs and simulate keypresses.
 #### Step 3: Update the Script with Your Device Name and Button ID
 
 - Change `device_name` to the name of your joystick device.
-- Update the `button_key_map`. first is the button_id you want to map, then in between the ' is the key you want to press.
+- Update the `button_key_map`. First is the button_id you want to map, then in between the ' is the key you want to be pressed.
 
 ```python
 # Map your buttons here:
@@ -52,11 +52,11 @@ button_key_map = {
     14: 'y', #other agencies
     15: 'q', #awacs
 }
-# Put the devince name here:
+# Put the device name here:
 device_name = 'WINWING Orion Throttle Base II + F15EX HANDLE L + F15EX HANDLE R'
 ```
 
-#### Step 4: Comment the Print Line
+#### Step 4: Comment out the Print Line
 
 - After identifying the correct device and button, comment out the line that prints the button ID to prevent the terminal from printing unnecessary information on every keypress.
 
