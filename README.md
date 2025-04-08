@@ -77,13 +77,3 @@ device_name = 'WINWING Orion Throttle Base II + F15EX HANDLE L + F15EX HANDLE R'
 
 - The script uses **pygame** to detect joystick input and **pydirectinput** to simulate the keypress.
 - This script is designed for **Falcon BMS** and specifically targets joystick buttons to open the COMM menu. Adjust the key and button mapping as needed for other actions or games.
-
----
-
-## License
-
-lol
-
-lmao even
-
-do whatever i dont care
